@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const Footer = () => {
   return (
@@ -13,24 +14,29 @@ const Footer = () => {
         </span>
         <ul className="flex flex-wrap justify-center items-center text-sm font-medium text-primary dark:text-gray-200">
           <li>
-            <a href="#hero" className="mr-4 hover:underline md:mr-6 ">
+            <Link to="hero" spy={true} smooth={true} offset={-100} duration={500} className="mr-4 hover:underline md:mr-6 ">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="about" spy={true} smooth={true} offset={-100} duration={500} className="mr-4 hover:underline md:mr-6 ">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#hero" className="mr-4 hover:underline md:mr-6">
+            <Link to="skills" spy={true} smooth={true} offset={-100} duration={500} className="mr-4 hover:underline md:mr-6">
               Skills
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#hero" className="mr-4 hover:underline md:mr-6">
+            <Link to="projects" spy={true} smooth={true} offset={-100} duration={500} className="mr-4 hover:underline md:mr-6">
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#hero" className="hover:underline">
+            <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} className="hover:underline">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

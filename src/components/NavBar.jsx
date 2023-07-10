@@ -54,18 +54,21 @@ const NavBar = () => {
 
         {/* Header links small screen */}
         <div className={showMenu ? 'block mx-auto p-3 shadow-lg' : 'hidden'}>
-          <a href="#about" className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="About">
+          <Link to="hero" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="About">
+            Home
+          </Link>
+          <Link to="about" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="About">
             About
-          </a>
-          <a href="#skills" className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Skills">
+          </Link>
+          <Link to="skils" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Skills">
             Skills
-          </a>
-          <a href="#projects" className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Projects">
+          </Link>
+          <Link to="projects" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Projects">
             Projects
-          </a>
-          <a href="#contact" className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Contact">
+          </Link>
+          <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Contact">
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Header links large screen */}
