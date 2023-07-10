@@ -1,5 +1,5 @@
 import NavBar from './components/NavBar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Hero from './pages/Hero';
 import AboutMe from './pages/AboutMe';
 import Skills from './pages/Skills';
@@ -14,20 +14,11 @@ function App() {
       <Router>
         <NavBar />
         <div className="container mx-auto px-3 sm:px-0">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <AboutMe />
-                  <Skills />
-                  <Projects />
-                  <Contact />
-                </>
-              }
-            />
-          </Routes>
+          <Hero />
+          <AboutMe />
+          <Skills />
+          <Projects />
+          <Contact />
         </div>
         <Footer />
       </Router>
