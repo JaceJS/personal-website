@@ -60,7 +60,7 @@ const NavBar = () => {
           <Link to="about" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="About">
             About
           </Link>
-          <Link to="skils" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Skills">
+          <Link to="skills" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Skills">
             Skills
           </Link>
           <Link to="projects" spy={true} smooth={true} offset={-100} duration={500} className="block text-center text-lg text-primary dark:text-gray-200 hover:text-sky-950 hover:underline mb-3" aria-label="Projects">
