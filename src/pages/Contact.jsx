@@ -1,19 +1,52 @@
+// import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaSpinner, FaCircleCheck, FaCircleXmark } from 'react-icons/fa6';
 
 const Contact = () => {
+  // mengirim form ke sheet
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwJ36rPxchDKW3eNLFSBhK5SrsO5k9bXVR6UZ-M92kb9NEhv_8abQxI6zonQeUaeXaaqw/exec';
-
     const form = e.target;
+    const submitBtn = document.getElementById('submitBtn');
+    const loadingBtn = document.getElementById('loadingBtn');
+    const successAlert = document.getElementById('successAlert');
+    const failAlert = document.getElementById('failAlert');
+
+    submitBtn.classList.toggle('hidden');
+    loadingBtn.classList.toggle('hidden');
 
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then((response) => {
         console.log('Success!', response);
+
+        // submit button
+        submitBtn.classList.toggle('hidden');
+        loadingBtn.classList.toggle('hidden');
+
+        // alert button
+        successAlert.classList.toggle('hidden');
+        successAlert.classList.toggle('flex');
+
+        setTimeout(() => {
+          successAlert.classList.toggle('hidden');
+          successAlert.classList.toggle('flex');
+        }, 5000);
+
         form.reset();
       })
-      .catch((error) => console.error('Error!', error.message));
+      .catch((error) => {
+        console.error('Error!', error.message);
+        // alert button
+        failAlert.classList.toggle('hidden');
+        failAlert.classList.toggle('flex');
+
+        setTimeout(() => {
+          failAlert.classList.toggle('hidden');
+          failAlert.classList.toggle('flex');
+        }, 5000);
+      });
   };
 
   return (
@@ -36,6 +69,21 @@ const Contact = () => {
       <div className="mx-auto max-w-screen-md text-primary dark:text-gray-200">
         <h1 className="font-semibold text-center text-3xl mb-5 md:mb-10">Contact</h1>
         <p className="mb-8 lg:mb-12 text-center sm:text-xl">Do you require any assistance? Get in touch with me for collaboration and partnership opportunities.</p>
+
+        <div id="successAlert" className="hidden w-full items-center rounded-lg bg-green-500 dark:bg-green-700 px-6 py-5 mb-8 lg:mb-12 text-base" role="alert">
+          <span className="mr-2">
+            <FaCircleCheck />
+          </span>
+          Success! Your message has been sent
+        </div>
+
+        <div id="failAlert" className="hidden w-full items-center rounded-lg bg-red-400 dark:bg-red-700 px-6 py-5 mb-8 lg:mb-12 text-base" role="alert">
+          <span className="mr-2">
+            <FaCircleXmark />
+          </span>
+          Error! Failed to send message
+        </div>
+
         <form name="submit-to-google-sheet" onSubmit={handleSubmit} className="space-y-8">
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -76,10 +124,18 @@ const Contact = () => {
             ></textarea>
           </div>
           <button
+            id="submitBtn"
             type="submit"
             className="py-3 px-5 text-sm font-medium text-center text-gray-200 hover:text-white dark:text-primary dark:hover:text-sky-950 rounded-lg bg-primary dark:bg-gray-200 hover:bg-sky-950 dark:hover:bg-white focus:ring-4 focus:outline-none focus:ring-sky-950 dark:focus:ring-white"
           >
             Send message
+          </button>
+          <button
+            id="loadingBtn"
+            className="hidden py-3 px-5 text-sm font-medium text-center text-gray-200 hover:text-white dark:text-primary dark:hover:text-sky-950 rounded-lg bg-primary dark:bg-gray-200 hover:bg-sky-950 dark:hover:bg-white focus:ring-4 focus:outline-none focus:ring-sky-950 dark:focus:ring-white}"
+            disabled
+          >
+            <FaSpinner />
           </button>
         </form>
       </div>
