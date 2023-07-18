@@ -14,8 +14,8 @@ const Skills = () => {
         delay: 0.1,
       }}
       variants={{
-        hidden: { opacity: 0, x: 60 },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, y: 180 },
+        visible: { opacity: 1, y: 0 },
       }}
       id="skills"
       className="flex flex-col sm:justify-center items-center sm:flex-row mt-16 md:mt-28"

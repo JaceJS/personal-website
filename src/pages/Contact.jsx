@@ -60,7 +60,7 @@ const Contact = () => {
         delay: 0.1,
       }}
       variants={{
-        hidden: { opacity: 0, y: -180 },
+        hidden: { opacity: 0, y: 90 },
         visible: { opacity: 1, y: 0 },
       }}
       id="contact"
