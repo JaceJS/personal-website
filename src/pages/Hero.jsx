@@ -78,7 +78,7 @@ const Hero = () => {
         }}
         className="relative w-full mt-8 sm:mt-0 sm:order-1"
       >
-        <img src={HeroImage} alt="Developer" className="mx-auto relative z-10" />
+        <img src={HeroImage} alt="Developer" className="mx-auto relative z-[1]" />
         <span className="absolute w-[350px] h-[350px] z-[0] top-0 left-1/2 -translate-x-1/2">
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <path
